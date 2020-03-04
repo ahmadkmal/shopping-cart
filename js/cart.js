@@ -37,19 +37,27 @@ function showCart() {
   var tdEl = document.createElement('td');
   var tdEl2 = document.createElement('td');
   var tdEl0 = document.createElement('td');
+  tdEl0.id=i;
+  tdEl0.addEventListener('click', removeItemFromCart);
   tbody1.appendChild(trEl);
   trEl.appendChild(tdEl0);
   trEl.appendChild(tdEl);
   trEl.appendChild(tdEl2);
   tdEl2.textContent = cart.items[i].product;
-  tdEl.textContent = cart.items[i].product;
+  tdEl.textContent = cart.items[i].quantity;
   tdEl0.textContent = 'x';
   }
 }
 
 function removeItemFromCart(event) {
-
-
+  console.log(event);
+  cart.removeItem(Number(event.target.id));
+  cart.saveToLocalStorage();
+  event.stopPropagation();
+  clearCart()
+  showCart();
+  // location.reload(true);
+  return
   // TODO: When a delete link is clicked, use cart.removeItem to remove the correct item
   // TODO: Save the cart back to local storage
   // TODO: Re-draw the cart table

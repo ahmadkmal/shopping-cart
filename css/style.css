@@ -53,3 +53,14 @@ span#itemCount {
     position: absolute;
     right: 50px;
 }
+table {
+    border-collapse: inherit;
+    border-spacing: 0;
+    border: 3px solid;
+    margin: 50px;
+    padding: 18px;
+}
+td{
+    padding: 5px;
+    border: 1px solid;
+}
