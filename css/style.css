@@ -49,3 +49,7 @@ footer p {
     text-align: center;
     left: 50%;
 }
+span#itemCount {
+    position: absolute;
+    right: 50px;
+}
